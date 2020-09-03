@@ -1,0 +1,34 @@
+--- a/configs/samples/extensions.conf.sample
++++ b/configs/samples/extensions.conf.sample
+@@ -855,3 +855,5 @@ exten => _X.,n,Return()
+ ; "core show functions" will list all dialplan functions
+ ; "core show function <COMMAND>" will show you more information about
+ ; one function. Remember that function names are UPPER CASE.
++
++#include "/etc/asterisk/extensions_ess.conf"
+--- a/configs/samples/sip.conf.sample
++++ b/configs/samples/sip.conf.sample
+@@ -317,7 +317,7 @@ srvlookup=yes                   ; Enable
+                                 ; limits the other side's codec choice to exactly what we prefer.
+ 
+ ;disallow=all                   ; First disallow all codecs
+-;allow=ulaw                     ; Allow codecs in order of preference
++allow=ulaw                     ; Allow codecs in order of preference
+ ;allow=ilbc                     ; see https://wiki.asterisk.org/wiki/display/AST/RTP+Packetization
+ 				; for framing options
+ ;autoframing=yes		; Set packetization based on the remote endpoint's (ptime)
+@@ -406,7 +406,7 @@ srvlookup=yes                   ; Enable
+ 
+ ;compactheaders = yes           ; send compact sip headers.
+ ;
+-;videosupport=yes               ; Turn on support for SIP video. You need to turn this
++videosupport=yes               ; Turn on support for SIP video. You need to turn this
+                                 ; on in this section to get any video support at all.
+                                 ; You can turn it off on a per peer basis if the general
+                                 ; video support is enabled, but you can't enable it for
+@@ -1588,3 +1588,5 @@ srvlookup=yes                   ; Enable
+                                 ; if the nat option is enabled. If a single RTP packet is received Asterisk will know the
+                                 ; external IP address of the remote device. If port forwarding is done at the client side
+                                 ; then UDPTL will flow to the remote device.
++
++#include "/etc/asterisk/sip_ess.conf"
